@@ -2,7 +2,10 @@
   <div id="basicLayout">
     <a-layout style="height: 400px">
       <a-layout-header class="header">
-        <GlobalHeader />
+        <a-space>
+          <img src="@/assets/oj_logo.png" class="logo" />
+          <div>ZXL OJ</div>
+        </a-space>
       </a-layout-header>
       <a-layout-content class="content">
         <router-view />
@@ -17,18 +20,21 @@
 </template>
 <style scoped>
 #basicLayout {
+  text-align: center;
+}
+#basicLayout .logo{
+  width: 64px;
+  height: 64px;
 }
 #basicLayout .header {
   margin-bottom: 16px;
-  box-shadow: #eee 1px 1px 5px;
+  margin-top: 16px;
 }
 #basicLayout .content {
-  background: linear-gradient(#aaa, #fff);
   padding: 20px;
 }
 
 #basicLayout .footer {
-  background: #efefef;
   padding: 16px;
   position: absolute;
   text-align: center;
@@ -40,9 +46,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import GlobalHeader from "@/components/GlobalHeader.vue";
-
 export default defineComponent({
-  components: { GlobalHeader },
+  components: {},
 });
 </script>
